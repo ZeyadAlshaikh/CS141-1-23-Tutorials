@@ -1,4 +1,3 @@
-package Method;
 import java.util.Scanner;
 
 

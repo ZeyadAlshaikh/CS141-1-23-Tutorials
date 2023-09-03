@@ -1,12 +1,6 @@
 //package ClassesAndObjects;
 
- class Car{
 
-}
-
-class A{
-
-}
 
 public class Person {
     // instance variables 
@@ -23,7 +17,10 @@ public class Person {
     }
     // no argument constructor
     public Person(){
-        this("NA", 0, "000000");
+
+        
+        this("NA", 0 , "00000");
+
     }
 
     public Person(Person p){
@@ -61,7 +58,8 @@ public class Person {
         return id.substring(0, 3)+"-"+id.substring(4);
     }
 
+    @Override
     public String toString(){
-        return "Name: "+ name + " Age: "+ age + " ID: "+ id; 
+        return "Name: "+ name + " Age: "+ age + " ID: "+ getId(); 
     }
 }

@@ -14,6 +14,9 @@ public class Tester {
         Person p1 = new Person("Ahmad", 20 , "123455676"); 
         Person p2 = new Person("Ali", 30, "120003"); 
         Person p3 = new Person(p2);
+        Person p4 = new Person();
+
+        System.out.println(p4);
 
         
 

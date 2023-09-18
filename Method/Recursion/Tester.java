@@ -16,7 +16,7 @@ public class Tester {
 
     public static int rFactorial(int n){  
         // stop condition 
-        if(n == 1)
+        if(n == 1 || n == 0)
         return 1; 
         else // call  n! = n * (n-1)!
           return n * rFactorial(n-1);
@@ -59,6 +59,15 @@ public class Tester {
         System.out.println(Arrays.toString(numbers) );
         updateArray(numbers); 
         System.out.println(Arrays.toString(numbers) );
+
+        int n = 7; 
+        
+        for( int r=1; r<=n/2; r++){
+            //System.out.println(i+"! = "+rFactorial(i));
+            // P(n,r) = n! / (n-r)!
+            System.out.println((rFactorial(n)/rFactorial(n-r)));
+            
+        }
 
     }
 

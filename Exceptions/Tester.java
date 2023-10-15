@@ -2,18 +2,56 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Tester {
+
+    public static void methodA(int age)throws AgeLimitException
+    {
+        try {
+            if ( age < 16 )
+                throw new AgeLimitException("You must be 15 or older to purchese this");
+            else 
+                System.out.println("Confirmation number: "+ 1343234);
+        } catch (Exception e) {
+            System.err.println("Something wrong happend");
+            throw e; 
+        }
+       
+        
+    }
+
+    public static void assertTest(int x ){
+        // x must be positive 
+        assert ( x > 0 && x < 10) : "X must be positive and less than 10";
+
+        x = x * -1; 
+
+        assert x < 0 : "X must be negative";
+        // x must be negative
+    }
     
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
+
+        assertTest(5);
+
         String name=""; 
+        
+
         int age=0; 
         Scanner in = new Scanner(System.in);
 
+         double a = 2.2, b = 0, c; 
+
+         System.out.println(a/b);
+
+
         try{
-            //int x = 10 /0;
+            //method();
+            methodA(10);
+            int x = 10;
             //String str = null; 
             //str.equals("hello");
 
-            System.out.println("Please enter your name");
+            System.err.println("Please enter your name");
             name = in.next();
 
             System.out.println("Please enter your age");
@@ -28,6 +66,8 @@ public class Tester {
             in.next();
             System.out.println("Age must be number");
             age = in.nextInt();
+            
+            
         }
         // }catch(ArithmeticException ex){
         //     System.out.println("Divide by Zero");

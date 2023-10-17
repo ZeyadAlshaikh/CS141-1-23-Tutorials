@@ -6,20 +6,22 @@ public class Tester {
     public static void methodA(int age)throws AgeLimitException
     {
         try {
+
             if ( age < 16 )
                 throw new AgeLimitException("You must be 15 or older to purchese this");
             else 
                 System.out.println("Confirmation number: "+ 1343234);
+
         } catch (Exception e) {
-            System.err.println("Something wrong happend");
-            throw e; 
+           System.err.println("Something wrong happend");
+           throw e; 
         }
        
         
     }
 
     public static void assertTest(int x ){
-        // x must be positive 
+        // x must be positive  and less than 10
         assert ( x > 0 && x < 10) : "X must be positive and less than 10";
 
         x = x * -1; 
@@ -28,10 +30,11 @@ public class Tester {
         // x must be negative
     }
     
-    public static void main(String[] args)
+    public static void main(String[] args) 
     {
+        
 
-        assertTest(5);
+        assertTest(-5);
 
         String name=""; 
         
@@ -39,14 +42,13 @@ public class Tester {
         int age=0; 
         Scanner in = new Scanner(System.in);
 
-         double a = 2.2, b = 0, c; 
-
-         System.out.println(a/b);
-
+       
+        //int x = 10;
 
         try{
+            //System.exit(0);
             //method();
-            methodA(10);
+            methodA(5);
             int x = 10;
             //String str = null; 
             //str.equals("hello");
@@ -66,12 +68,12 @@ public class Tester {
             in.next();
             System.out.println("Age must be number");
             age = in.nextInt();
-            
+             
             
         }
-        // }catch(ArithmeticException ex){
-        //     System.out.println("Divide by Zero");
-        // }
+        catch(AgeLimitException ex){
+            System.out.println("Age must be > 15");
+        }
         catch(Exception ex){
             System.out.println("Exception");
             System.out.println(ex);
